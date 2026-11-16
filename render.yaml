@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: danny-task-manager-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: CORS_ORIGINS
+        value: https://danny-task-manager-react.netlify.app
