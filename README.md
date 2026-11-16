@@ -2,6 +2,12 @@
 
 An Express REST API for a React task manager. This backend learning project demonstrates routes, JSON bodies, validation, UUIDs, HTTP responses, and CRUD operations.
 
+## Hosted API
+
+[Health check](https://task-manager-api-bbj6.onrender.com/health) · [Tasks](https://task-manager-api-bbj6.onrender.com/tasks)
+
+The API is hosted on Render. Verify the responses and the frontend connection after deployment; a successful hosting status alone does not verify every endpoint.
+
 **Data is stored in server memory.** A browser refresh can read back changes while the same server instance runs, but a restart, redeploy, or sleeping host resets the list. All visitors share the same demo data. There are no accounts or database.
 
 ## Run locally
@@ -101,7 +107,7 @@ render.yaml        Render Free web-service blueprint
 4. Set the health check to `/health`. Render supplies `PORT`; the server binds to `0.0.0.0`.
 5. Set `CORS_ORIGINS` to `https://danny-task-manager-react.netlify.app`. Additional allowed origins can be comma-separated, with no trailing slash on an origin.
 6. After deployment, open the actual service URL followed by `/health` and `/tasks`.
-7. Set Netlify's frontend build variable `VITE_API_URL` to that actual HTTPS origin and redeploy the frontend.
+7. Ensure `VITE_API_URL` in the frontend's `netlify.toml` matches the actual API origin and redeploy the frontend. It currently uses `https://task-manager-api-bbj6.onrender.com`.
 
 CORS permits the listed browser origins; it does not authenticate users or prevent non-browser clients from using the API. This API is intentionally a shared public learning demo. Do not use it as private or durable storage.
 
